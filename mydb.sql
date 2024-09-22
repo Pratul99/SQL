@@ -1,6 +1,6 @@
 
-/*                          Har Har MahaDev
-                            ---------------
+/*                                                       Har Har MahaDe
+                                                         ---------------
 16-09-2024
 ----------
 */
@@ -10,14 +10,12 @@ CREATE SCHEMA Test;
 
 DROP DATABASE mydb;
 
-CREATE DATABASE IF NOT EXISTS mydb
+CREATE DATABASE IF NOT EXISTS mydb;
 
 
 /*   
-   -------------------------------------------------------------------- x --------------------------------------------------------------------
+-------------------------------------------------------------------- x --------------------------------------------------------------------
 
-                          Har Har MahaDev
-                            ---------------
 17-09-2024
 ----------
 */
@@ -37,6 +35,7 @@ INSERT INTO Student VALUES (1,'MahaDev', null);
 
 SELECT * FROM Student;
 
+-- TRUNCATE statement is used to quickly and efficiently remove all rows from a table, resetting the table to an empty state. 
 TRUNCATE Student;
 
 SELECT Roll_num, MARKS FROM Student;
@@ -46,4 +45,62 @@ SELECT Roll_num Rnum, Marks Mrk FROM Student;
 
 IMPORT TABLE FROM 'C:\Users\Administrator\Downloads/employee';
 
--- Pattern matching works with only LIKE/NOT LIKE operator
+-- Pattern matching works with only LIKE/NOT LIKE operator.
+
+
+/*   
+-------------------------------------------------------------------- x --------------------------------------------------------------------
+
+22-09-2024
+----------
+*/
+
+-- Shortcut key :
+CTRL + ENTER : Execute the current line
+CTRL + SHIFT + ENTER : Execute all line
+
+
+ALTER TABLE student ADD(Age int);
+ALTER TABLE student DROP COLUMN Age;
+
+
+/*We can increase the size of the clomun but in order to decrease the size or change the datatype of column,  
+the column should not have any data. */
+
+ALTER TABLE stuent MODIFY COLUMN Name VARCHAR(20);
+
+
+-- Rename a cloumn in a table.
+ALTER TABLE student RENAME COLUMN Name TO SName;
+
+
+/* In SQL, the command SET autocommit = 0; disables the autocommit mode for the current session. When autocommit is disabled, any SQL 
+changes (such as INSERT, UPDATE, DELETE, etc.) are not automatically committed to the database after each statement. Instead, 
+you must manually commit or roll back transactions.
+
+By default it's values is 1.
+You have to "COMMIT" changes to safe/update the update in DB.
+*/
+
+
+SET autocommit = 0;
+SET SQL_SAFE_UPDATES = 0;
+
+COMMIT;
+
+DELETE FROM student;
+
+ROLLBACK;
+
+-- TRUNCATE statement is used to quickly and efficiently remove all rows from a table, resetting the table to an empty state. Rollback is not possible.
+
+TRUNCATE Student;
+
+-- TO rename a table
+
+RENAME TABLE HR to TA;
+
+-------------------------------------------------------------------- x --------------------------------------------------------------------
+
+-- Built-in Functions in MySQL
+
