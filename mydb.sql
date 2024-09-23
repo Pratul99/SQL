@@ -59,13 +59,15 @@ IMPORT TABLE FROM 'C:\Users\Administrator\Downloads/employee';
 CTRL + ENTER : Execute the current line
 CTRL + SHIFT + ENTER : Execute all line
 
-
+-- To add new column to a table.
 ALTER TABLE student ADD(Age int);
+
+-- To remove a column from a table.
 ALTER TABLE student DROP COLUMN Age;
 
 
 /*We can increase the size of the clomun but in order to decrease the size or change the datatype of column,  
-the column should not have any data. */
+the column should not have any data, it should be empty. */
 
 ALTER TABLE stuent MODIFY COLUMN Name VARCHAR(20);
 
@@ -104,3 +106,33 @@ RENAME TABLE HR to TA;
 
 -- Built-in Functions in MySQL
 
+/*   
+-------------------------------------------------------------------- x --------------------------------------------------------------------
+
+23-09-2024
+----------
+*/
+
+
+-- WHERE Clause example.
+SELECT * FROM employees
+WHERE department = 'Sales';
+
+
+-- Having clause example.
+SELECT department, COUNT(*) AS employee_count
+FROM employees
+GROUP BY department
+HAVING COUNT(*) > 5;
+
+
+-- You can use both WHERE and HAVING in the same query:
+SELECT department, AVG(salary) AS avg_salary
+FROM employees
+WHERE department != 'HR'  -- Exclude the HR department (individual rows filter)
+GROUP BY department
+HAVING AVG(salary) > 50000;  -- Only include departments where the average salary is greater than 50,000 (groups filter)
+
+-- <> is not equal to in SQL.
+ex. 
+DEPARTMENT_ID<>50
