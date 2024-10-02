@@ -139,7 +139,15 @@ DEPARTMENT_ID<>50
 
 /*   
 -------------------------------------------------------------------- x --------------------------------------------------------------------
-26-09-2024
+02-10-2024
 ----------
 */
 
+-- NULL is allowed in UNIQUE constraints.
+-- UNIQUE Constraint will not allow duplicate of "string" & Integers
+
+-- AUTO_INCREMENT has to be used with PRIMARY KEY Constraint
+
+-- Any modification on the OG table will affect the View. But same does not for vice-versa.
+
+-- If COMMIT action is done then we cannot get the ROLLBACK.
